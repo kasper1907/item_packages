@@ -1,0 +1,141 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:description",
+ "creation": "2024-08-27 17:50:12.300000",
+ "description": "Aggregate group of **Items** into another **Item**. This is useful if you are bundling a certain **Items** into a package and you maintain stock of the packed **Items** and not the aggregate **Item**. \n\nThe package **Item** will have \"Is Stock Item\" as \"No\" and \"Is Sales Item\" as \"Yes\".\nFor Example: If you are selling Laptops and Backpacks separately and have a special price if the customer buys both, then the Laptop + Backpack will be a new Item Package.\n\nNote: BOM = Bill of Materials",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "new_item_code",
+  "description",
+  "pricing_section",
+  "price_list",
+  "item_section",
+  "items",
+  "totals_section",
+  "total_amount",
+  "net_total",
+  "column_break_cfly",
+  "discount_percent",
+  "total_discount",
+  "section_break_dgua",
+  "about"
+ ],
+ "fields": [
+  {
+   "fieldname": "new_item_code",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Parent Item",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description",
+   "unique": 1
+  },
+  {
+   "fieldname": "pricing_section",
+   "fieldtype": "Section Break",
+   "label": "Pricing"
+  },
+  {
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "label": "Price List",
+   "options": "Price List"
+  },
+  {
+   "description": "List items that form the package.",
+   "fieldname": "item_section",
+   "fieldtype": "Section Break",
+   "label": "Items"
+  },
+  {
+   "description": "Option are sales order Items \n\nFawzy",
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Package Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "totals_section",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "net_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Net Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_cfly",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "discount_percent",
+   "fieldtype": "Percent",
+   "label": "Discount Percent"
+  },
+  {
+   "fieldname": "total_discount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Discount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_dgua",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "about",
+   "fieldtype": "HTML",
+   "options": "<h3>About Item Package</h3>\n\n<p>Aggregate group of <b>Items</b> into another <b>Item</b>. This is useful if you are bundling a certain <b>Items</b> into a package and you maintain stock of the packed <b>Items</b> and not the aggregate <b>Item</b>.</p>\n<p>The package <b>Item</b> will have <code>Is Stock Item</code> as <b>No</b> and <code>Is Sales Item</code> as <b>Yes</b>.</p>\n<h4>Example:</h4>\n<p>If you are selling Laptops and Backpacks separately and have a special price if the customer buys both, then the Laptop + Backpack will be a new Item Package.</p>"
+  }
+ ],
+ "icon": "fa fa-sitemap",
+ "links": [],
+ "modified": "2024-08-29 10:31:15.767231",
+ "modified_by": "Administrator",
+ "module": "Item Packages",
+ "name": "Item Package",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

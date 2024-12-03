@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-27 17:48:11.005875",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "package",
+  "qty",
+  "discount_percent",
+  "add_discount",
+  "discount_is_added"
+ ],
+ "fields": [
+  {
+   "fieldname": "package",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Package",
+   "options": "Item Package",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "package.discount_percent",
+   "fetch_if_empty": 1,
+   "fieldname": "discount_percent",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Discount Percent"
+  },
+  {
+   "fieldname": "add_discount",
+   "fieldtype": "Button",
+   "in_list_view": 1,
+   "label": "Add Discount"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount_is_added",
+   "fieldtype": "Check",
+   "label": "Discount is Added",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-28 10:30:55.520734",
+ "modified_by": "Administrator",
+ "module": "Item Packages",
+ "name": "Item Packages Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
